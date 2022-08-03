@@ -21,7 +21,7 @@ const Main = () => {
           <div key={place.name}>
             <span>
               {place.name[0].toUpperCase() + place.name.substring(1)},{" "}
-              {place.area.toUpperCase()}
+              {place.area[0].toUpperCase() + place.area.substring(1)}
             </span>
           </div>
         );
