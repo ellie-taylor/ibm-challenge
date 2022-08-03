@@ -20,7 +20,8 @@ const Main = () => {
         return (
           <div key={place.name}>
             <span>
-              {place.name}, {place.area}
+              {place.name[0].toUpperCase() + place.name.substring(1)},{" "}
+              {place.area.toUpperCase()}
             </span>
           </div>
         );
