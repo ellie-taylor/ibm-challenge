@@ -1,7 +1,7 @@
 export default [
   {
     name: "Dishoom",
-    road: "Oxford Street"
+    area: "Oxford Street"
   },
   //🐨: This one isn't formatted correctly.
   // Can you make it an object like the others?
