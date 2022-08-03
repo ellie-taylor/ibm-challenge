@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.Main {
+  padding: 3rem;
+  height: 100vh;
+  background-color: lightyellow;
+}
