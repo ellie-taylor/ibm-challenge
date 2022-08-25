@@ -13,6 +13,19 @@ const Main = () => {
   // 💰: I've put the function in a seperate file, so you can try it yourself first!
   // If you need it, check out `./sort.js`
   // Once you've got your sorted value into a variable, render it like the below
+
+  // capitalise the first letter of each term in string
+  function capitalise(str) {
+    const terms = str.split(" ")
+
+    for (var i =0; i < terms.length; i++) {
+      terms[i] = terms[i][0].toUpperCase() + terms[i].substring(1);
+    }
+    const capitalised = terms.join(" ");
+
+    return capitalised;
+  }
+
   return (
     <div className="Main">
       <h3>The Brunchinator</h3>
@@ -20,8 +33,9 @@ const Main = () => {
         return (
           <div key={place.name}>
             <span>
-              {place.name[0].toUpperCase() + place.name.substring(1)},{" "}
-              {place.area[0].toUpperCase() + place.area.substring(1)}
+              {capitalise(place.name)}, {" "}
+              {capitalise(place.area)}
+              {console.log(place.name.indexOf(' '))}
             </span>
           </div>
         );
