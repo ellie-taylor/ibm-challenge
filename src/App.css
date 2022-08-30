@@ -14,7 +14,6 @@
   background: #04abff;
   border-radius: 25px;
   color: white;
-  font-size: 30px;
 }
 
 .Grid {
@@ -24,8 +23,17 @@
   margin: 20px;
 }
 
+h2 {
+  font-size: 2.5vw ;
+}
+
+h3 {
+  font-size: 1.9vw;
+}
+
 h4 {
   margin: 10px;
+  font-size: 1.vw;
 }
 
 .List {
@@ -33,10 +41,11 @@ h4 {
   border: 3px solid #04abff;
   border-radius: 25px;
   padding: 5px;
+  font-size: 1.7vw;
 }
 
 p {
-  margin: 2px;
+  margin: 10px;
 }
 
 .Info {
@@ -44,10 +53,15 @@ p {
   border: 3px solid #04abff;
   border-radius: 25px;
   padding: 5px;
+  font-size: 1.4vw;
 }
 
 img {
   width: 100%;
   height: 30%;
   border-radius: 8px;
+}
+
+#current:hover {
+  font-weight: 700;
 }

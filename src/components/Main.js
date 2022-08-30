@@ -7,6 +7,9 @@ import capitalise from "../utils/capitalise";
 
 const Main = () => {
 
+  const [order, setOrder] = useState(places)
+
+
   const [info, setInfo] = useState({
     name: "Dishoom",
     area: "Oxford Street",
@@ -16,16 +19,10 @@ const Main = () => {
   });
 
   const placesToSort = places;
-  const sorted = sort(placesToSort)
 
-  function sortingName() {
-    const sorted = sort(placesToSort);
-    console.log("test 1")
-  }
-
-  function sortingLocation() {
-    const sorted = sortLoc(placesToSort);
-    console.log("test 2")
+  function updateOrder() {
+    const sorted = sort(placesToSort)
+    setOrder(sorted)
   }
 
   function updateState(place) {
@@ -36,18 +33,25 @@ const Main = () => {
   return (
     <div className="Main">
       <div className="Header">
-        <h3>The Brunchinator</h3>
+        <h2>The Brunchinator</h2>
       </div>
       <div className="Grid"> 
         <div className="List"> 
           <h3> Venues </h3>
-          {sorted.map((place) => {
+          {order.map((place) => {
             return (
               <div key={place.name}>
-                <p onClick= { () => updateState(place)}>  {capitalise(place.name) }</p>
+                <p id ="current" onClick= { () => updateState(place)}> {capitalise(place.name) }</p>
               </div>
             );
           })}
+
+          <div>
+            { 
+            <button onClick= { () => updateOrder()} type="button">Sort by Name</button>
+            }
+          </div>
+
         </div>
         <div className="Info">
           <h3> {capitalise(info.name)} </h3>
@@ -61,18 +65,7 @@ const Main = () => {
         </div>
       </div>
 
-      <div className="TournamentButton">
-        { 
-         <button onClick= {sortingName} type="button">Sort Alphabetically by Name</button>
-        }
-      </div>
 
-
-      <div className="TournamentButton">
-        { 
-         <button onClick= {sortingLocation} type="button">Sort Alphabetically by Location</button>
-        }
-      </div>
 
     </div>
   );
